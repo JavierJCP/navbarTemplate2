@@ -1,0 +1,357 @@
+:root {
+  --primari-color: blueviolet;
+  --secondary-color: rgb(109, 8, 203);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1em;
+}
+p {
+  font-size: 1.2em;
+}
+button {
+  border: none;
+  background-color: var(--primari-color);
+  color: white;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/** Encabezado **/
+nav {
+  text-align: center;
+}
+
+.logo {
+  color: var(--primari-color);
+  margin: 1em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.barras{
+  color: black;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.menu{
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: visibility 0s, opacity 0.7s ease-in;
+}
+.mostrar{
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
+}
+.barras:hover{
+  color: var(--primari-color);
+}
+.menu-item {
+  list-style: none;
+  padding: 0.5em 0;
+}
+.menu-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.menu-link:hover {
+  color: var(--primari-color);
+}
+
+/** Hero **/
+#hero {
+  text-align: center;
+  margin: 20px auto;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./img/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#hero h1 {
+  color: white;
+  margin-bottom: 40px;
+}
+
+/** Descripcion **/
+
+.descripcion {
+  height: 50vh;
+  display: flex;
+  text-align: center;
+}
+.texto h2 {
+  font-size: 2em;
+  margin: 30px 0;
+}
+.texto span {
+  color: var(--primari-color);
+}
+
+/** Nuestros programas **/
+.nuestros-programas {
+  text-align: center;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px;
+}
+.nuestros-programas h2 {
+  margin-top: 0;
+  font-size: 3.2em;
+}
+.nuestros-programas h3 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+.nuestros-programas p {
+  display: none;
+}
+.card {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  margin: 30px;
+  border-radius: 15px;
+}
+.card:first-child {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./img/front-end.jpg");
+}
+.card:nth-child(2) {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./img/full-stack.jpg");
+}
+.card:nth-child(3) {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./img/python.jpg");
+}
+
+/** Caracteristicas **/
+.caracteristicas {
+  height: 60vh;
+  display: flex;
+}
+.caracteristicas ul {
+  list-style: none;
+  font-size: 1.5em;
+}
+.caracteristicas li {
+  padding: 1em;
+  font-weight: bold;
+}
+
+/** Final **/
+.final {
+  background-color: #1e1e1e;
+  display: flex;
+  height: 60vh;
+  color: white;
+  text-align: center;
+}
+.final h1 {
+  margin: 1em 0;
+}
+
+footer {
+  text-align: center;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #646464;
+}
+
+/**  *****************************MEDIA QUERYS*************************** **/
+
+@media (min-width: 850px) {
+  .barras{
+    display: none;
+  }
+  header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: #e0e0e0;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+  }
+  .menu-item {
+    padding: 0 0.5em;
+  }
+  /**Heroe**/
+  #hero{
+    margin: 0;
+  }
+  #hero h1 {
+    font-size: 5em;
+  }
+  /** Descripcion **/
+  .descripcion {
+    height: 100%;
+    padding: 100px 0;
+    margin: 0;
+  }
+  .descripcion .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .descripcion .texto {
+    width: 50%;
+    max-width: 600px;
+    text-align: initial;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .img-container {
+    background-image: url("./img/somos-proya.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px;
+  }
+  /** Nuestros programas **/
+  .nuestros-programas .nuestros {
+    display: flex;
+    justify-content: center;
+  }
+  .nuestros-programas p {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .nuestros-programas h2 {
+    font-size: 4em;
+  }
+  .nuestros-programas h3 {
+    margin-top: 0;
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .card {
+    background-position-y: 0;
+    background-size: 100% 150px;
+    background-repeat: no-repeat;
+    padding: 50px;
+    background-color: rgba(50, 50, 50, 1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .card:first-child {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("./img/front-end-cropped.jpg");
+  }
+  .card:nth-child(2) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("./img/full-stack-cropped.jpg");
+  }
+  .card:nth-child(3) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("./img/python-cropped.jpg");
+  }
+
+  /** Caracteristicas **/
+  .caracteristicas {
+    margin: 100px 0;
+  }
+  .caracteristicas .container {
+    display: flex;
+  }
+
+  .img-caracteristicas {
+    background-image: url("./img/background-2.jpeg");
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+    width: 400px;
+    margin: 0 100px;
+  }
+  .caracteristicas-ul {
+    margin: auto;
+  }
+
+  .caracteristicas-ul li {
+    min-width: max-content;
+  }
+
+  /** Final **/
+
+  .final h1 {
+    font-size: 4em;
+  }
+}
